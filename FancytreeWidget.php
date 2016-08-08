@@ -203,6 +203,7 @@ class FancytreeWidget extends InputWidget
                 $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->parent . '").setSelected(true)');
             } elseif ($this->model->id) {
                 $attribute = $this->attribute;
+                $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->$attribute . '");');
                 $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->model->$attribute . '").setSelected(true)');
             }
         }
