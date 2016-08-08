@@ -43,6 +43,7 @@ $data = [
  <?= $form->field($model, 'attribute')->widget(FancytreeWidget::classname(), [
             'name' => 'fancytree',
             'source' => $data,
+            'parent' =>$id // parent category id (if exist)
             'options' => [
             ],
         ]); ?>

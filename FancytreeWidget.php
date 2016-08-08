@@ -122,6 +122,10 @@ class FancytreeWidget extends InputWidget
      */
     public $source;
     /**
+     * @var id of parent category (optional)
+     */
+    public $parent;
+    /**
      * @var array Translation table
      */
     public $strings;
@@ -182,6 +186,7 @@ class FancytreeWidget extends InputWidget
             'scrollParent' => $this->scrollParent,
             'selectMode' => $this->selectMode,
             'source' => $this->source,
+            'parent' => $this->parent,
             'strings' => $this->strings,
             'tabbable' => $this->tabbable,
             'titlesTabbable' => $this->titlesTabbable,
@@ -192,14 +197,14 @@ class FancytreeWidget extends InputWidget
             $selected = $this->selectMode == self::SELECT_SINGLE ? 'undefined' : "\"{$name}\"";
             $active = $this->selectMode == self::SELECT_SINGLE ? $name : 'undefined';
             $view->registerJs('$("#' . $id . '").parents("form").submit(function(){$("#' . $id . '").fancytree("getTree").generateFormElements(' . $selected . ', ' . $active . ')});');
-            $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->id . '");');
 
-            if ($this->model->id && $this->model->parent()->one()) {
-                $parent = $this->model->parent()->one()->id;
-                $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $parent . '").setSelected(true)');
+            if (!empty($this->parent && $this->model->id)) {
+                $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->id . '");');
+                $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->parent . '").setSelected(true)');
+            } elseif ($this->model->id) {
+                $attribute = $this->attribute;
+                $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->model->$attribute . '").setSelected(true)');
             }
-
-
         }
     }
 }
