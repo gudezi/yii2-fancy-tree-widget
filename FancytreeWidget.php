@@ -1,5 +1,5 @@
 <?php
-namespace andru19\fancytree;
+namespace gudezi\fancytree;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;

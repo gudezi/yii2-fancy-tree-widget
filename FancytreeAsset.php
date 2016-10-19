@@ -1,7 +1,7 @@
 <?php
 
 
-namespace andru19\fancytree;
+namespace gudezi\fancytree;
 
 /**
  * Asset bundle for fancytree Widget

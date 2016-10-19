@@ -1,18 +1,18 @@
 {
-	"name": "andru19/yii2-fancytree-widget",
+	"name": "gudezi/yii2-fancytree-widget",
 	"description": "The yii2-fancytree widget is a Yii 2 wrapper for the [Fancytree](https://github.com/mar10/fancytree). A JavaScript dynamic tree view plugin for jQuery with support for persistence, keyboard, checkboxes, tables, drag'n'drop, and lazy loading",
 	"keywords": ["yii2", "extension", "widget", "fancytree", "treeview"],
 	"type": "yii2-extension",
 	"license": "BSD-3-Clause",
 	"support": {
-		"issues": "https://github.com/ANDRU19/yii2-fancy-tree-widget/issues",
-		"wiki": "https://github.com/ANDRU19/yii2-fancy-tree-widget/wiki/",
-		"source": "https://github.com/ANDRU19/yii2-fancy-tree-widget"
+		"issues": "https://github.com/gudezi/yii2-fancy-tree-widget/issues",
+		"wiki": "https://github.com/gudezi/yii2-fancy-tree-widget/wiki/",
+		"source": "https://github.com/gudezi/yii2-fancy-tree-widget"
 	},
 	"authors": [
 		{
-			"name": "Andrew",
-			"email": "andriy.ry@gmail.com"
+			"name": "gudezi",
+			"email": "gudezi@gmail.com"
 		}
 	],
 	"require": {
@@ -21,6 +21,6 @@
 		"bower-asset/fancytree": "*"
 	},
 	"autoload": {
-		"psr-4": { "andru19\\fancytree\\": "" }
+		"psr-4": { "gudezi\\fancytree\\": "" }
 	}
 }
