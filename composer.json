@@ -15,7 +15,6 @@
 			"email": "gudezi@gmail.com"
 		}
 	],
-    "minimum-stability": "dev",
 	"require": {
 		"yiisoft/yii2": "*",
 		"yiisoft/yii2-jui": "*",
